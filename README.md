@@ -9,3 +9,22 @@ There are exactly four non-trivial examples of this type of fraction, less than 
 If the product of these four fractions is given in its lowest common terms, find the value of the denominator.
 
 Information at [Project Euler 033](https://projecteuler.net/problem=33)
+
+## UX
+
+**Getting Started**
+
+Click on the Show Solution button to show the solution.  Click on the Hide Solution button to hide the solution.
+
+**User Stories**
+
+As a user, I can show or hide the solution.
+
+As a user, I expect the function `digitCancellingFractions()` to return a number.
+
+As a user, I expect the function `digitCancellingFractions()` to return 100.
+
+**Information Architecture**
+
+The function `digitCancellingFractions()` returns a number.
+
