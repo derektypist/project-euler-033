@@ -57,3 +57,9 @@ function digitCancellingFractions() {
     }
     return simplifyFrac(finalD,finalN)[0];
 }
+
+// Function to Hide Solution
+function hideSolution() {
+    let txt = "";
+    document.getElementById("solution").innerHTML = txt;
+}
