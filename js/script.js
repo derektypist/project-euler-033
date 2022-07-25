@@ -18,3 +18,22 @@ function simplifyFrac(denom,num) {
     }
     return [sDenom,sNum];
 }
+
+// Function to Cancel Pair - Check if digit is cancelling
+function cancelPair(denom,num) {
+    const dDigits = [Math.floor(denom/10), denom%10];
+    const nDigits = [Math.floor(num/10), num%10];
+    if (dDigits.indexOf(0) > -1) {
+        return false;
+    } else if (dDigits[0] === nDigits[0]) {
+        return [dDigits[1],nDigits[1]];
+    } else if (dDigits[0] === nDigits[1]) {
+        return [dDigits[1],nDigits[0]];
+    } else if (dDigits[1] === nDigits[0]) {
+        return [dDigits[0],nDigits[1]];
+    } else if (dDigits[1] === nDigits[1]) {
+        return [dDigits[0],nDigits[0]];
+    } else {
+        return false;
+    }
+}
