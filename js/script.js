@@ -6,7 +6,7 @@ function showSolution() {
     document.getElementById("solution").innerHTML = txt;
 }
 
-// Function to Simplify Fraction
+// Function to Simplify Fraction - Returns an Array
 function simplifyFrac(denom,num) {
     let sDenom = denom, sNum = num;
     for (let i=2;i<10;i++) {
@@ -36,4 +36,24 @@ function cancelPair(denom,num) {
     } else {
         return false;
     }
+}
+
+/*
+    Function to return the solution to the problem as described in
+    https://projecteuler.net/problem=33
+*/
+function digitCancellingFractions() {
+    let finalN = 1;
+    let finalD = 1;
+    for (let denom=11;denom<100;denom++) {
+        for (let num=11;num<denom;num++) {
+            const test = cancelPair(denom,num);
+            if (!test) continue;
+            if (num/denom === test[1]/test[0]) {
+                finalN *= test[1];
+                finalD *= test[0];
+            }
+        }
+    }
+    return simplifyFrac(finalD,finalN)[0];
 }
